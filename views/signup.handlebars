@@ -1,0 +1,22 @@
+<!-- views/signup.handlebars -->
+
+<!-- Include any necessary HTML/CSS structure for the sign-up page -->
+<div class="container">
+  <h1>Sign Up</h1>
+
+  <!-- Display the sign-up form -->
+  <form action="/public/js/signup.js" method="POST">
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <button type="submit">Sign Up</button>
+  </form>
+
+  <!-- Display the login option -->
+  <p>Already have an account? <a href="/public/js/login.js">Log in</a></p>
+</div>

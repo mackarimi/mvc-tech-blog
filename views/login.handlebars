@@ -1,0 +1,22 @@
+<!-- views/login.handlebars -->
+
+<!-- Include any necessary HTML/CSS structure for the login page -->
+<div class="container">
+  <h1>Login</h1>
+
+  <!-- Display the login form -->
+  <form action="/public/js/login.js" method="POST">
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <button type="submit">Log in</button>
+  </form>
+
+  <!-- Display the sign-up option -->
+  <p>Don't have an account? <a href="/public/js/signup.js">Sign up</a></p>
+</div>

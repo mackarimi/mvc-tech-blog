@@ -1,0 +1,31 @@
+<!-- views/homepage.handlebars -->
+
+<!-- Include any necessary HTML/CSS structure for the homepage -->
+<div class="container">
+  <h1>Welcome to the Tech Blog!</h1>
+
+  <!-- Display navigation links for the homepage and the dashboard -->
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/controllers/dashboard-routes.js">Dashboard</a></li>
+    </ul>
+  </nav>
+
+  <!-- Display login option -->
+  <div>
+    <a href="/public/js/login.js">Login</a>
+  </div>
+
+  <!-- Display existing blog posts -->
+  <div class="blog-posts">
+    {{#each posts}}
+      <div class="blog-post">
+        <h2>{{this.title}}</h2>
+        <p>{{this.createdAt}}</p>
+      </div>
+    {{else}}
+      <p>No blog posts found.</p>
+    {{/each}}
+  </div>
+</div>

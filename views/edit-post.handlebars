@@ -1,0 +1,21 @@
+<!-- views/edit-post.handlebars -->
+
+<!-- Include any necessary HTML/CSS structure for editing a blog post -->
+<div class="container">
+  <h1>Edit Blog Post</h1>
+
+  <!-- Create a form to edit the blog post -->
+  <form id="edit-post-form">
+    <div class="form-group">
+      <label for="post-title">Title:</label>
+      <input type="text" id="post-title" name="title" value="{{post.title}}" required>
+    </div>
+
+    <div class="form-group">
+      <label for="post-content">Content:</label>
+      <textarea id="post-content" name="content" required>{{post.content}}</textarea>
+    </div>
+
+    <button type="submit">Save Changes</button>
+  </form>
+</div>

@@ -1,0 +1,22 @@
+<!-- views/partials/dashboard.handlebars -->
+
+<!-- Include any necessary HTML/CSS structure for the dashboard -->
+<div class="dashboard">
+  <h2>Welcome to Your Dashboard</h2>
+
+  {{#if posts.length}}
+    <h3>Your Blog Posts:</h3>
+    <ul>
+      {{#each posts}}
+        <li>
+          <a href="/posts/{{id}}">{{title}}</a>
+          <button class="delete-post" data-id="{{id}}">Delete</button>
+        </li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p>You haven't created any blog posts yet.</p>
+  {{/if}}
+
+  <button id="add-post-button">Add New Post</button>
+</div>
