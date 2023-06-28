@@ -5,12 +5,13 @@ const homeRoutes = require("./home-routes.js"); // Updated filename
 const dashboardRoutes = require("./dashboard-routes.js"); // Updated filename
 
 // Add your API routes here
-router.use("/", homeRoutes);
-router.use("/dashboard", dashboardRoutes);
-router.use("/api", apiRoutes);
+router.use("/api", apiRoutes); // API routes
+router.use("/", homeRoutes); // Routes for the homepage
+router.use("/dashboard", dashboardRoutes); // Routes for the dashboard
 
+// Handle 404 error for any undefined routes
 router.use((req, res) => {
-    res.status(404).end();
+  res.status(404).end();
 });
 
 module.exports = router;

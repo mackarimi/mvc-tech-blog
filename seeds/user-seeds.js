@@ -1,21 +1,35 @@
-const { User } = require('../models');
+const { User } = require("../models");
 
 const userData = [
   {
-    username: "testuser1",
-    password: "password1",
-    email: "email@kmail.com",
-    twitter: "twitter1",
-    github: "github1",
+    username: "martin_bour",
+    twitter: "martinb",
+    github: "martinb",
+    email: "martin_b@gmail.com",
+    password: "p@ssword1",
+  },
+  // Add or modify user data as needed
+  {
+    username: "john_doe",
+    twitter: "johnd",
+    github: "johnd",
+    email: "john_doe@gmail.com",
+    password: "p@ssword7",
   },
   {
-    username: "testuser2",
-    password: "password2",
-    email: "email@email.com",
-    twitter: "twitter2",
-    github: "github2",
+    username: "jane_smith",
+    twitter: "janes",
+    github: "janes",
+    email: "jane_smith@gmail.com",
+    password: "p@ssword8",
   },
-  // Add more user data objects as needed
+  {
+    username: "jim_jones",
+    twitter: "jimj",
+    github: "jimj",
+    email: "jim_jones@gmail.com",
+    password: "p@ssword9",
+  },
 ];
 
 const seedUsers = () => User.bulkCreate(userData);

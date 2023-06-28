@@ -1,22 +1,38 @@
-<!-- views/login.handlebars -->
+<!-- login.handlebars -->
+{{!-- Use Bulma CSS classes for styling --}}
 
-<!-- Include any necessary HTML/CSS structure for the login page -->
-<div class="container">
-  <h1>Login</h1>
+{{!-- Header --}}
+{{header}}
 
-  <!-- Display the login form -->
-  <form action="/public/js/login.js" method="POST">
-    <div>
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required>
-    </div>
-    <div>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
-    </div>
-    <button type="submit">Log in</button>
-  </form>
+{{!-- Navigation --}}
+{{navigation}}
 
-  <!-- Display the sign-up option -->
-  <p>Don't have an account? <a href="/public/js/signup.js">Sign up</a></p>
+<div class="section">
+  <div class="container">
+    <h2 class="title">Login</h2>
+    <form action="/login" method="POST">
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+          <input class="input" type="email" name="email" placeholder="Enter your email" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Password</label>
+        <div class="control">
+          <input class="input" type="password" name="password" placeholder="Enter your password" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <button class="button is-primary" type="submit">Login</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
+
+{{!-- Footer --}}
+{{> footer}}

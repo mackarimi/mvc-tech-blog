@@ -1,27 +1,61 @@
+<!-- views/layouts/main.handlebars -->
+{{! Use Bulma CSS classes for styling }}
+
+
 <html lang="en">
 
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Tech Blog</title>
+
+    <title>Wat'cha Blogging</title>
+    <!-- Add your CSS and JavaScript links here -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"
+    />
     <link rel="stylesheet" href="/public/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <header>
-      <h1>Tech Blog</h1>
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/controllers/dashboard-routes.js">Dashboard</a></li>
-          {{#if logged_in}}
-            <li><a href="/public/js/logout.js">Logout</a></li>
-          {{else}}
-            <li><a href="/public/js/login.js">Login</a></li>
-            <li><a href="/public/js/signup.js">Sign Up</a></li>
-          {{/if}}
-        </ul>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <h1 class="navbar-item title is-4">Wat'cha Blogging</h1>
+        </div>
+        <div class="navbar-menu">
+          <ul class="navbar-start">
+            <li class="navbar-item"><a
+                href="/"
+                class="navbar-link"
+              >Home</a></li>
+          </ul>
+          <ul class="navbar-end">
+            {{#if loggedIn}}
+              <li class="navbar-item"><a
+                  href="/dashboard"
+                  class="navbar-link"
+                >Dashboard</a></li>
+              <li class="navbar-item"><a
+                  href="/logout"
+                  class="navbar-link"
+                >Logout</a></li>
+            {{else}}
+              <li class="navbar-item"><a
+                  href="/login"
+                  class="navbar-link"
+                >Login</a></li>
+              <li class="navbar-item"><a href="/signup" class="navbar-link">Sign
+                  Up</a></li>
+            {{/if}}
+          </ul>
+        </div>
       </nav>
     </header>
 
@@ -29,11 +63,11 @@
       {{{body}}}
     </main>
 
-    <footer>
-      <p>&copy; 2023 Tech Blog.</p>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>&copy; {{year}} Wat'cha Blogging. All rights reserved.</p>
+      </div>
     </footer>
-
-    <script src="/scripts/main.js"></script>
   </body>
 
 </html>

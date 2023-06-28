@@ -1,4 +1,4 @@
-<!-- homepage.handlebars -->
+<!-- dashboard.handlebars -->
 {{!-- Use Bulma CSS classes for styling --}}
 
 {{!-- Header --}}
@@ -9,12 +9,19 @@
 
 <div class="section">
   <div class="container">
-    <h2 class="title">Welcome to the MVC Tech Blog</h2>
+    <h2 class="title">Welcome to Your Dashboard</h2>
+
+    <a href="/dashboard/add" class="button is-primary">Add New Post</a>
+
     {{#if posts}}
       {{#each posts}}
         <div class="post">
           <h3><a href="/post/{{id}}">{{title}}</a></h3>
-          <p>Posted by {{user}} on {{formatDate created_at}}</p>
+          <p>Created on {{created_at}}</p>
+          <div class="post-actions">
+            <a href="/post/edit/{{id}}" class="button is-link">Edit</a>
+            <a href="/post/delete/{{id}}" class="button is-danger">Delete</a>
+          </div>
         </div>
       {{/each}}
     {{else}}

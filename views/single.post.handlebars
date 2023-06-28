@@ -1,8 +1,28 @@
-{{!-- single-post.handlebars --}}
+<!-- single-post.handlebars -->
+{{!-- Use Bulma CSS classes for styling --}}
 
-<h2>{{post.title}}</h2>
-<p>{{post.contents}}</p>
-<h3>Comments</h3>
-{{#each comments}}
-  {{> comment}}
-{{/each}}
+{{!-- Header --}}
+{{header}}
+
+{{!-- Navigation --}}
+{{navigation}}
+
+<div class="section">
+  <div class="container">
+    <div class="post">
+      <h2>{{title}}</h2>
+      <p class="post-author">Posted by {{User.username}} on {{formatDate created_at}}</p>
+      <div class="post-content">
+        {{{post_content}}}
+      </div>
+    </div>
+
+    <h2 class="title is-4">Comments</h2>
+
+    {{!-- Add your comments template code here --}}
+    {{> comments}}
+  </div>
+</div>
+
+{{!-- Footer --}}
+{{> footer}}
