@@ -37,7 +37,7 @@ Comment.init(
 
     // Comment text
     comment_text: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(500),
       allowNull: false,
       validate: {
         // Comment must be at least 1 character long

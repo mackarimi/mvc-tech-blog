@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const sequelize = require("../config/connection");
 const { Post, User, Comment } = require("../models");
 
 // GET all posts for the homepage
@@ -21,12 +20,12 @@ router.get("/", async (req, res) => {
           ],
           include: {
             model: User,
-            attributes: ["username", "Twitter", "Github"],
+            attributes: ["username"],
           },
         },
         {
           model: User,
-          attributes: ["username", "Twitter", "Github"],
+          attributes: ["username"],
         },
       ],
     });
@@ -78,12 +77,12 @@ router.get("/post/:id", async (req, res) => {
           ],
           include: {
             model: User,
-            attributes: ["username", "Twitter", "Github"],
+            attributes: ["username"],
           },
         },
         {
           model: User,
-          attributes: ["username", "Twitter", "Github"],
+          attributes: ["username"],
         },
       ],
     });

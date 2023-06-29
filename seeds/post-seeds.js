@@ -2,54 +2,21 @@ const { Post } = require("../models");
 
 const postData = [
   {
-    title: "Test Post 1",
-
-    post_content: "This is a test post",
-
+    title: "First Post",
+    post_content: "This is the content of the first post.",
     user_id: 1,
   },
   {
-    title: "Test Post 1",
-
-    post_content: "This is a test post",
-
+    title: "Second Post",
+    post_content: "This is the content of the second post.",
     user_id: 2,
   },
   {
-    title: "Test Post 1",
-
-    post_content: "This is a test post",
-
+    title: "Third Post",
+    post_content: "This is the content of the second post.",
     user_id: 3,
-  },
-  {
-    title: "Test Post 1",
-
-    post_content: "This is a test post",
-
-    user_id: 4,
-  },
-  {
-    title: "Test Post 1",
-
-    post_content: "This is a test post",
-
-    user_id: 5,
-  },
-  {
-    title: "Test Post 1",
-
-    post_content: "This is a test post",
-
-    user_id: 5,
-  },
-  {
-    title: "Test Post 1",
-
-    post_content: "This is a test post",
-
-    user_id: 6,
-  },
+  }
+  // Add more post data as needed
 ];
 
 const seedPosts = () => Post.bulkCreate(postData);

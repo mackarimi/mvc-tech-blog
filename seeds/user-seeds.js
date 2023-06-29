@@ -2,33 +2,30 @@ const { User } = require("../models");
 
 const userData = [
   {
-    username: "martin_bour",
-    twitter: "martinb",
-    github: "martinb",
-    email: "martin_b@gmail.com",
-    password: "p@ssword1",
-  },
-  // Add or modify user data as needed
-  {
-    username: "john_doe",
-    twitter: "johnd",
-    github: "johnd",
-    email: "john_doe@gmail.com",
-    password: "p@ssword7",
+    username: "user1",
+    password: "password1",
+    twitter: "user1",
+    github: "user1",
+    email: "user1@mail.com",
+    // Add other user fields as needed
   },
   {
-    username: "jane_smith",
-    twitter: "janes",
-    github: "janes",
-    email: "jane_smith@gmail.com",
-    password: "p@ssword8",
+    username: "user2",
+    password: "password2",
+    twitter: "user2",
+    github: "user2",
+    email: "user2@mail.com",
+
+    // Add other user fields as needed
   },
+
+  // Add more user data as needed
   {
-    username: "jim_jones",
-    twitter: "jimj",
-    github: "jimj",
-    email: "jim_jones@gmail.com",
-    password: "p@ssword9",
+    username: "user3",
+    password: "password3",
+    twitter: "user3",
+    github: "user3",
+    email: "user3@mail.com",
   },
 ];
 

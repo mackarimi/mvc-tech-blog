@@ -6,10 +6,9 @@ class Post extends Model {}
 
 //  create fields/columns for Post model
 Post.init(
-
-  //  define post_id column
+  //  define id column
   {
-    post_id: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -18,17 +17,22 @@ Post.init(
 
     //  define title column
     title: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(1000),
       allowNull: false,
     },
 
     //  define post_content column
     post_content: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(1000),
       allowNull: false,
     },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
 
-    //  define user_id column
+    //  define user id column
     user_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -44,6 +48,5 @@ Post.init(
     modelName: "post",
   }
 );
-
 
 module.exports = Post;
