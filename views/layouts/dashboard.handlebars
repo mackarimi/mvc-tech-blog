@@ -11,7 +11,7 @@
   <div class="container">
     <h2 class="title">Welcome to Your Dashboard</h2>
 
-    <a href="/dashboard/add" class="button is-primary">Add New Post</a>
+    <a href="dashboard/create" class="button is-primary">Add New Post</a>
 
     {{#if posts}}
       {{#each posts}}
@@ -19,16 +19,22 @@
           <h3><a href="/post/{{id}}">{{title}}</a></h3>
           <p>Created on {{created_at}}</p>
           <div class="post-actions">
-            <a href="/post/edit/{{id}}" class="button is-link">Edit</a>
-            <a href="/post/delete/{{id}}" class="button is-danger">Delete</a>
+            <a href="post/edit/{{id}}" class="button is-link">Edit</a>
+            <a href="post/delete/{{id}}" class="button is-danger">Delete</a>
           </div>
         </div>
       {{/each}}
     {{else}}
       <p>No posts found.</p>
     {{/if}}
+
+    <div class="social-icons">
+      <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
   </div>
 </div>
 
 {{!-- Footer --}}
-{{> footer}}
+{{footer}}

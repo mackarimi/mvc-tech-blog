@@ -1,9 +1,9 @@
 const router = require("express").Router();
+const bcrypt = require("bcrypt");
 const { User, Post, Comment } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 // GET ALL USERS
-
 router.get("/", (req, res) => {
   User.findAll({
     attributes: { exclude: ["password"] },
@@ -13,29 +13,27 @@ router.get("/", (req, res) => {
 });
 
 // GET SINGLE USER
-
 router.get("/:id", (req, res) => {
-  user
-    .findOne({
-      attributes: { exclude: ["password"] },
-      where: {
-        id: req.params.id,
+  User.findOne({
+    attributes: { exclude: ["password"] },
+    where: {
+      id: req.params.id,
+    },
+    include: [
+      {
+        model: Post,
+        attributes: ["id", "title", "created_at", "post_content"],
       },
-      include: [
-        {
+      {
+        model: Comment,
+        attributes: ["id", "comment_text", "created_at"],
+        include: {
           model: Post,
-          attributes: ["id", "title", "created_at", "post_content"],
+          attributes: ["title"],
         },
-        {
-          model: Comment,
-          attributes: ["id", "comment_text", "created_at"],
-          include: {
-            model: Post,
-            attributes: ["title"],
-          },
-        },
-      ],
-    })
+      },
+    ],
+  })
     .then((dbUserData) => {
       if (!dbUserData) {
         res.status(400).json({ message: "No user found with this id" });
@@ -49,60 +47,67 @@ router.get("/:id", (req, res) => {
     });
 });
 
-// CREATE USER
-
-router.post("/", (req, res) => {
+// CREATE USER/ SIGNUP
+router.post("/signup", (req, res) => {
   User.create({
     username: req.body.username,
-    twitter: req.body.twitter,
     email: req.body.email,
-    github: req.body.github,
-    password: req.body.password,
-  }).then((dbUserData) => {
-    req.session.save(() => {
-      (req.session.user_id = dbUserData.id),
-        (req.session.username = dbUserData.username),
-        (req.session.twitter = dbUserData.twitter),
-        (req.session.email = dbUserData.email),
-        (req.session.github = dbUserData.github),
-        (req.session.loggedIn = true);
-
-      res.json(dbUserData);
+    password: bcrypt.hashSync(req.body.password, 10),
+  })
+    .then((dbUserData) => {
+      req.session.save(() => {
+        req.session.user_id = dbUserData.id;
+        req.session.username = dbUserData.username;
+        req.session.email = dbUserData.email;
+        req.session.loggedIn = true;
+        res.json(dbUserData);
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
     });
-  });
 });
 
-// LOGIN
-
+// LOGIN ROUTE
 router.post("/login", (req, res) => {
   User.findOne({
     where: {
       email: req.body.email,
     },
-  }).then((dbUserData) => {
-    if (!dbUserData) {
-      res.status(400).json({ message: "No user with that email address!" });
-      return;
-    }
-    const validPassword = dbUserData.checkPassword(req.body.password);
+  })
+    .then((dbUserData) => {
+      if (!dbUserData) {
+        res.status(400).json({ message: "No user with that email address!" });
+        return;
+      }
 
-    if (!validPassword) {
-      res.status(400).json({ message: "Incorrect password!" });
-      return;
-    }
-    req.session.save(() => {
-      (req.session.user_id = dbUserData.id),
-        (req.session.username = dbUserData.username),
-        (req.session.twitter = dbUserData.twitter),
-        (req.session.email = dbUserData.email),
-        (req.session.github = dbUserData.github),
-        (req.session.loggedIn = true);
+      const validPassword = bcrypt.compareSync(
+        req.body.password,
+        dbUserData.password
+      );
 
-      res.json({ user: dbUserData, message: "You are now logged in!" });
+      if (!validPassword) {
+        res.status(400).json({ message: "Incorrect password!" });
+        return;
+      }
+
+      req.session.save(() => {
+        req.session.user_id = dbUserData.id;
+        req.session.username = dbUserData.username;
+        req.session.email = dbUserData.email;
+        req.session.loggedIn = true;
+
+        res.json({ user: dbUserData, message: "You are now logged in!" });
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
     });
-  });
 });
 
+// LOGOUT ROUTE
 router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
@@ -113,8 +118,7 @@ router.post("/logout", (req, res) => {
   }
 });
 
-// UPDATE USER
-
+// UPDATE USER INFO
 router.put("/:id", withAuth, (req, res) => {
   User.update(req.body, {
     individualHooks: true,
@@ -123,17 +127,19 @@ router.put("/:id", withAuth, (req, res) => {
     },
   })
     .then((dbUserData) => {
-      if (!dbUserData) {
-        res.status(400).json({ message: "No user found with this id" });
+      if (!dbUserData[0]) {
+        res.status(404).json({ message: "No user found with this id" });
         return;
       }
       res.json(dbUserData);
     })
-    .catch((err) => res.status(500).json(err));
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
-// DELETE USER
-
+// DELETE USER ACCOUNT
 router.delete("/:id", withAuth, (req, res) => {
   User.destroy({
     where: {
@@ -142,12 +148,20 @@ router.delete("/:id", withAuth, (req, res) => {
   })
     .then((dbUserData) => {
       if (!dbUserData) {
-        res.status(400).json({ message: "No user found with this id" });
+        res.status(404).json({ message: "No user found with this id" });
         return;
       }
       res.json(dbUserData);
     })
-    .catch((err) => res.status(500).json(err));
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
+
+// Admin oversea all users and posts (delete, update, create)
+// Admin can delete users and posts
+// Admin can update users and posts
+// Admin can create users and posts
 
 module.exports = router;

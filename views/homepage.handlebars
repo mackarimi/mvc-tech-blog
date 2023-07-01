@@ -1,15 +1,15 @@
 <!-- homepage.handlebars -->
-{{!-- Use Bulma CSS classes for styling --}}
+{{! Use Bulma CSS classes for styling }}
 
-{{!-- Header --}}
+{{! Header }}
 {{header}}
 
-{{!-- Navigation --}}
+{{! Navigation }}
 {{navigation}}
 
-<div class="section">
+<div class="section" >
   <div class="container">
-    <h2 class="title">Welcome to the MVC Tech Blog</h2>
+    <h2 class="title">Welcome to the Wat'cha Blogging</h2>
     {{#if posts}}
       {{#each posts}}
         <div class="post">
@@ -23,5 +23,7 @@
   </div>
 </div>
 
-{{!-- Footer --}}
-{{> footer}}
+{{! Footer }}
+{{footer}}
+
+<script src="/public/js/create-comment.js" ></script>

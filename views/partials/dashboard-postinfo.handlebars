@@ -1,10 +1,10 @@
 <!-- dashboard-postinfo.handlebars -->
-{{!-- Use Bulma CSS classes for styling --}}
+{{! Use Bulma CSS classes for styling }}
 
-{{!-- Header --}}
+{{! Header }}
 {{header}}
 
-{{!-- Navigation --}}
+{{! Navigation }}
 {{navigation}}
 
 <div class="section">
@@ -18,7 +18,7 @@
           <h3><a href="/post/{{id}}">{{title}}</a></h3>
           <p>Created on {{formatDate created_at}}</p>
           <div class="post-actions">
-            <a href="/post/edit/{{id}}" class="button is-link">Edit</a>
+            <a href="post/edit/{{id}}" class="button is-link">Edit</a>
             <a href="/post/delete/{{id}}" class="button is-danger">Delete</a>
           </div>
         </div>
@@ -32,9 +32,9 @@
       <p><strong>Username:</strong> {{User.username}}</p>
       <p><strong>Email:</strong> {{User.email}}</p>
       <p><strong>Twitter:</strong> {{User.twitter}}</p>
+      <p><strong>Facebook:</strong> {{User.facebook}}</p>
+      <p><strong>Github:</strong> {{User.github}}</p>
+
     </div>
   </div>
 </div>
-
-{{!-- Footer --}}
-{{> footer}}

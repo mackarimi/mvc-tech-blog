@@ -1,13 +1,18 @@
 <!-- comments.handlebars -->
-{{!-- Use Bulma CSS classes for styling --}}
+{{! Use Bulma CSS classes for styling }}
 
-{{!-- Add your comments template code here --}}
+{{! Add your comments template code here }}
 <div class="comments">
   <h3 class="title is-5">Add a Comment</h3>
-  <form action="/comments/create" method="POST">
+  <form action="models/Comment.js" method="POST">
     <div class="field">
       <div class="control">
-        <textarea class="textarea" name="comment" placeholder="Enter your comment" required></textarea>
+        <textarea
+          class="textarea"
+          name="comment"
+          placeholder="Enter your comment"
+          required
+        ></textarea>
       </div>
     </div>
 
@@ -24,7 +29,10 @@
       {{#each comments}}
         <li class="comment">
           <p class="comment-content">{{comment}}</p>
-          <p class="comment-author">Posted by {{User.username}} on {{formatDate created_at}}</p>
+          <p class="comment-author">Posted by
+            {{User.username}}
+            on
+            {{formatDate created_at}}</p>
         </li>
       {{/each}}
     </ul>

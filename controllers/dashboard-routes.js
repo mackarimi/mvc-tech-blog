@@ -3,6 +3,7 @@ const router = require("express").Router();
 const { Post, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
+
 // Dashboard route - Get all posts for the logged-in user
 router.get("/", withAuth, async (req, res) => {
   console.log(req.session);

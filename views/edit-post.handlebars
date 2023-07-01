@@ -1,10 +1,10 @@
 <!-- edit-post.handlebars -->
-{{!-- Use Bulma CSS classes for styling --}}
+{{! Use Bulma CSS classes for styling }}
 
-{{!-- Header --}}
+{{! Header }}
 {{header}}
 
-{{!-- Navigation --}}
+{{! Navigation }}
 {{navigation}}
 
 <div class="section">
@@ -14,14 +14,24 @@
       <div class="field">
         <label class="label">Title</label>
         <div class="control">
-          <input class="input" type="text" name="title" value="{{title}}" required>
+          <input
+            class="input"
+            type="text"
+            name="title"
+            value="{{title}}"
+            required
+          />
         </div>
       </div>
 
       <div class="field">
         <label class="label">Content</label>
         <div class="control">
-          <textarea class="textarea" name="content" required>{{content}}</textarea>
+          <textarea
+            class="textarea"
+            name="content"
+            required
+          >{{content}}</textarea>
         </div>
       </div>
 
@@ -32,7 +42,17 @@
       </div>
     </form>
   </div>
+
 </div>
 
-{{!-- Footer --}}
-{{> footer}}
+{{! Footer }}
+{{footer}}
+
+<script src="/public/js/edit-post.js">
+
+</script>
+
+<script src="/public/js/deletePost.js" >
+
+
+</script>

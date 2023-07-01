@@ -1,6 +1,4 @@
 <!-- views/layouts/main.handlebars -->
-{{! Use Bulma CSS classes for styling }}
-
 
 <html lang="en">
 
@@ -10,6 +8,8 @@
 
     <title>Wat'cha Blogging</title>
     <!-- Add your CSS and JavaScript links here -->
+
+    
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"
@@ -21,6 +21,10 @@
       href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/your-font-awesome-kit.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -31,10 +35,10 @@
         </div>
         <div class="navbar-menu">
           <ul class="navbar-start">
-            <li class="navbar-item"><a
-                href="/"
-                class="navbar-link"
-              >Home</a></li>
+            <li class="navbar-item"><a href="/" class="navbar-link"><span
+                  class="icon-text"
+                ><span class="icon"><i class="fas fa-home"></i></span><span
+                  >Home</span></span></a></li>
           </ul>
           <ul class="navbar-end">
             {{#if loggedIn}}
@@ -47,12 +51,17 @@
                   class="navbar-link"
                 >Logout</a></li>
             {{else}}
+              <li class="navbar-item"><a href="/login" class="navbar-link"><span
+                    class="icon-text"
+                  ><span class="icon"><i
+                        class="fas fa-sign-in-alt"
+                      ></i></span><span>Login</span></span></a></li>
               <li class="navbar-item"><a
-                  href="/login"
+                  href="/signup"
                   class="navbar-link"
-                >Login</a></li>
-              <li class="navbar-item"><a href="/signup" class="navbar-link">Sign
-                  Up</a></li>
+                ><span class="icon-text"><span class="icon"><i
+                        class="fas fa-user-plus"
+                      ></i></span><span>Sign Up</span></span></a></li>
             {{/if}}
           </ul>
         </div>
@@ -67,7 +76,9 @@
       <div class="content has-text-centered">
         <p>&copy; {{year}} Wat'cha Blogging. All rights reserved.</p>
       </div>
+      
     </footer>
+    <script src="/public/js/logout.js" ></script>
   </body>
 
 </html>
