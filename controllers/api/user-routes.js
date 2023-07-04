@@ -159,9 +159,4 @@ router.delete("/:id", withAuth, (req, res) => {
     });
 });
 
-// Admin oversea all users and posts (delete, update, create)
-// Admin can delete users and posts
-// Admin can update users and posts
-// Admin can create users and posts
-
 module.exports = router;

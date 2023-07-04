@@ -8,7 +8,7 @@ async function createCommentHandler(event) {
   ];
 
   if (content) {
-    const response = await fetch("/api/comments/create", {
+    const response = await fetch("/api/comments", {
       method: "POST",
       body: JSON.stringify({
         content,

@@ -1,4 +1,4 @@
-<!-- signup.handlebars -->
+{{! create signup.handlebars }}
 {{! Use Bulma CSS classes for styling }}
 
 <section class="section">
@@ -7,41 +7,33 @@
       <div class="column is-one-third">
         <div class="box">
           <h2 class="title has-text-centered">Sign Up</h2>
-          {{!-- <form action="users/signup" method="POST"> --}}
+          <form class="signup-form">
             <div class="field">
-              <label class="label">Username</label>
+              <label class="label" for="username-signup">Username</label>
               <div class="control">
                 <input
                   class="input"
                   type="text"
-                  name="username"
-                  placeholder="Enter your username"
+                  id="username-signup"
                   required
                 />
               </div>
             </div>
 
             <div class="field">
-              <label class="label">Email</label>
+              <label class="label" for="email-signup">Email</label>
               <div class="control">
-                <input
-                  class="input"
-                  type="email"
-                  name="email"
-                  placeholder="Enter your email"
-                  required
-                />
+                <input class="input" type="email" id="email-signup" required />
               </div>
             </div>
 
             <div class="field">
-              <label class="label">Password</label>
+              <label class="label" for="password-signup">Password</label>
               <div class="control">
                 <input
                   class="input"
                   type="password"
-                  name="password"
-                  placeholder="Enter your password"
+                  id="password-signup"
                   required
                 />
               </div>
@@ -56,11 +48,6 @@
         </div>
       </div>
     </div>
+    <script src="/js/signup.js"></script>
   </div>
 </section>
-
-{{! Footer }}
-{{footer}}
-<script src="/signup.js">
-
-</script>

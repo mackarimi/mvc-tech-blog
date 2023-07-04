@@ -4,18 +4,15 @@ const sequelize = require("../../config/connection");
 const withAuth = require("../../utils/auth");
 
 // get all users
-
 router.get("/", (req, res) => {
   console.log("======================");
   Post.findAll({
     attributes: ["id", "title", "created_at", "post_content"],
     order: [["created_at", "DESC"]],
-
     include: [
       {
         model: Comment,
         attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
-
         include: {
           model: User,
           attributes: ["username", "email", "twitter", "github"],
@@ -35,19 +32,16 @@ router.get("/", (req, res) => {
 });
 
 // get single user
-
 router.get("/:id", (req, res) => {
   Post.findOne({
     where: {
       id: req.params.id,
     },
-
     attributes: ["id", "title", "created_at", "post_content"],
     include: [
       {
         model: Comment,
         attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
-
         include: {
           model: User,
           attributes: ["username", "email", "twitter", "github"],
@@ -73,7 +67,6 @@ router.get("/:id", (req, res) => {
 });
 
 // create a post
-
 router.post("/", withAuth, (req, res) => {
   Post.create({
     title: req.body.title,
@@ -88,7 +81,6 @@ router.post("/", withAuth, (req, res) => {
 });
 
 // update a post
-
 router.put("/:id", withAuth, (req, res) => {
   Post.update(
     {
@@ -115,7 +107,6 @@ router.put("/:id", withAuth, (req, res) => {
 });
 
 // delete a post
-
 router.delete("/:id", withAuth, (req, res) => {
   Post.destroy({
     where: {

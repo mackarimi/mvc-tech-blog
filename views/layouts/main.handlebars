@@ -9,61 +9,61 @@
     <title>Wat'cha Blogging</title>
     <!-- Add your CSS and JavaScript links here -->
 
-    
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"
     />
-    <link rel="stylesheet" href="/public/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <script
-      src="https://kit.fontawesome.com/your-font-awesome-kit.js"
-      crossorigin="anonymous"
-    ></script>
+
   </head>
 
   <body>
     <header>
       <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <h1 class="navbar-item title is-4">Wat'cha Blogging</h1>
-        </div>
         <div class="navbar-menu">
-          <ul class="navbar-start">
-            <li class="navbar-item"><a href="/" class="navbar-link"><span
-                  class="icon-text"
-                ><span class="icon"><i class="fas fa-home"></i></span><span
-                  >Home</span></span></a></li>
-          </ul>
-          <ul class="navbar-end">
-            {{#if loggedIn}}
-              <li class="navbar-item"><a
-                  href="/dashboard"
-                  class="navbar-link"
-                >Dashboard</a></li>
-              <li class="navbar-item"><a
-                  href="/logout"
-                  class="navbar-link"
-                >Logout</a></li>
-            {{else}}
-              <li class="navbar-item"><a href="/login" class="navbar-link"><span
+          <div class="navbar-start">
+            <h1 class="navbar-item title is-4"></h1>
+          </div>
+          <div class="navbar-end">
+            <ul class="navbar-start">
+              <li class="navbar-item"><a href="/" class="navbar-link"><span
                     class="icon-text"
-                  ><span class="icon"><i
-                        class="fas fa-sign-in-alt"
-                      ></i></span><span>Login</span></span></a></li>
-              <li class="navbar-item"><a
-                  href="/signup"
-                  class="navbar-link"
-                ><span class="icon-text"><span class="icon"><i
-                        class="fas fa-user-plus"
-                      ></i></span><span>Sign Up</span></span></a></li>
+                  ><span class="icon"><i class="fas fa-home"></i></span><span
+                    >Home</span></span></a></li>
+            </ul>
+            {{#if loggedIn}}
+              <ul class="navbar-start">
+                <li class="navbar-item"><a
+                    href="/dashboard"
+                    class="navbar-link"
+                  >Dashboard</a></li>
+                <li class="navbar-item"><a
+                    href="/logout"
+                    class="navbar-link"
+                  >Logout</a></li>
+              </ul>
+            {{else}}
+              <ul class="navbar-start">
+                <li class="navbar-item"><a
+                    href="/login"
+                    class="navbar-link"
+                  ><span class="icon-text"><span class="icon"><i
+                          class="fas fa-sign-in-alt"
+                        ></i></span><span>Login</span></span></a></li>
+                <li class="navbar-item"><a
+                    href="/signup"
+                    class="navbar-link"
+                  ><span class="icon-text"><span class="icon"><i
+                          class="fas fa-user-plus"
+                        ></i></span><span>Sign Up</span></span></a></li>
+              </ul>
             {{/if}}
-          </ul>
+          </div>
         </div>
       </nav>
     </header>
@@ -76,9 +76,8 @@
       <div class="content has-text-centered">
         <p>&copy; {{year}} Wat'cha Blogging. All rights reserved.</p>
       </div>
-      
     </footer>
-    <script src="/public/js/logout.js" ></script>
+
   </body>
 
 </html>

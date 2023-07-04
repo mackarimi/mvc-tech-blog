@@ -15,12 +15,14 @@
 
     {{#if posts}}
       {{#each posts}}
-        <div class="post">
-          <h3><a href="/post/{{id}}">{{title}}</a></h3>
-          <p>Created on {{created_at}}</p>
-          <div class="post-actions">
-            <a href="post/edit/{{id}}" class="button is-link">Edit</a>
-            <a href="post/delete/{{id}}" class="button is-danger">Delete</a>
+        <div class="box post">
+          <div class="content">
+            <h3 class="title is-4"><a href="/post/{{id}}">{{title}}</a></h3>
+            <p class="subtitle is-6">Created on {{created_at}}</p>
+            <div class="buttons">
+              <a href="{{id}}" class="button is-link">Edit</a>
+              <a href="{{id}}" class="button is-danger">Delete</a>
+            </div>
           </div>
         </div>
       {{/each}}
@@ -35,6 +37,5 @@
     </div>
   </div>
 </div>
-
 {{!-- Footer --}}
 {{footer}}
