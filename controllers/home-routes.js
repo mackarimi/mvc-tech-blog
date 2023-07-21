@@ -11,7 +11,13 @@ router.get("/", async (req, res) => {
       include: [
         {
           model: Comment,
-          attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
+          attributes: [
+            "id",
+            "comment_text",
+            "post_id",
+            "user_id",
+            "created_at",
+          ],
           include: {
             model: User,
             attributes: ["username"],
@@ -42,6 +48,15 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+// GET logout
+router.get("/logout", (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy();
+    res.redirect("/");
+    return;
+  }
+});
+
 // GET signup page
 router.get("/signup", (req, res) => {
   if (req.session.loggedIn) {
@@ -62,7 +77,13 @@ router.get("/post/:id", async (req, res) => {
       include: [
         {
           model: Comment,
-          attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
+          attributes: [
+            "id",
+            "comment_text",
+            "post_id",
+            "user_id",
+            "created_at",
+          ],
           include: {
             model: User,
             attributes: ["username"],

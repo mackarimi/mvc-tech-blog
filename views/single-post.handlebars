@@ -1,5 +1,4 @@
-<!-- single-post.handlebars -->
-{{! Use Bulma CSS classes for styling }}
+<h1>single-post</h1>
 
 <html lang="en">
 
@@ -8,33 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{title}}</title>
     <!-- Add your CSS and JavaScript links here -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"
-    />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <style>
-      /* Add your custom styles here */ body { font-family: 'Crimson Text',
-      serif; margin: 0; padding: 0; } .section { padding: 2rem; } .container {
-      max-width: 960px; margin: 0 auto; } .post { margin-bottom: 2rem; } .post
-      h2 { font-size: 2rem; font-weight: bold; margin-bottom: 1rem; } .post
-      .post-author { font-size: 1rem; color: #888; } .post .post-content {
-      margin-top: 1rem; line-height: 1.6; } .title.is-4 { margin-top: 3rem;
-      margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: bold; } .comments {
-      margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #7b9311; }
-      .comment-list { list-style-type: none; margin: 0; padding: 0; } .comment {
-      margin-bottom: 1.5rem; } .comment-content { margin-bottom: 0.5rem; }
-      .comment-author { font-size: 0.9rem; color: #888; } .footer {
-      background-color: #f5f5f5; padding: 1.5rem 0; text-align: center; }
-      .footer p { margin: 0; font-size: 0.9rem; } .social-icons { margin-top:
-      1rem; } .social-icon { display: inline-block; margin-right: 1rem; color:
-      #888; font-size: 1.5rem; }
-    </style>
+
   </head>
 
   <body>
@@ -51,7 +32,7 @@
           </div>
         </div>
 
-        <h2 class="title is-4">Comments</h2>
+        <h2 class="title is-6">Comments</h2>
 
         <div class="comments">
           <ul class="comment-list">
@@ -69,19 +50,19 @@
       </div>
     </section>
 
-    <footer class="footer">
-      <div class="container">
-
-        <div class="social-icons">
-          <a href="#" class="social-icon">Facebook</a>
-          <a href="#" class="social-icon">Twitter</a>
-          <a href="#" class="social-icon">Instagram</a>
-        </div>
-      </div>
-    </footer>
-
     <!-- Add your JavaScript code here -->
 
+
   </body>
+  <footer class="footer">
+    <div class="container">
+
+      <div class="social-icons">
+        <a href="#" class="social-icon">Facebook</a>
+        <a href="#" class="social-icon">Twitter</a>
+        <a href="#" class="social-icon">Instagram</a>
+      </div>
+    </div>
+  </footer>
 
 </html>

@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
     });
 });
 
-// Get a single comment by its ID
+// GET /api/comments/:id
 router.get("/:id", (req, res) => {
   Comment.findOne({
     where: {
@@ -32,7 +32,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-// Create a new comment
+// POST /api/comments
 router.post("/", withAuth, (req, res) => {
   if (req.session) {
     Comment.create({

@@ -1,4 +1,3 @@
-// Initiated by: logout.handlebars
 async function logout() {
     const response = await fetch('/api/users/logout', {
         method: 'POST',

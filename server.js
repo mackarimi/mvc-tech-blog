@@ -6,7 +6,6 @@ const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const path = require("path");
 require("dotenv").config();
-// const helpers = require("./utils/helpers");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -44,7 +43,7 @@ app.use(
     store: sessionStore,
     cookie: {
       secure: false,
-      maxAge: 864000000,
+      maxAge: 987000000,
     },
   })
 );

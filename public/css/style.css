@@ -1,110 +1,92 @@
-/* Global Styles */
+/* Add your custom styles here */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Crimson Text',
+        serif;
     margin: 0;
     padding: 0;
+}
+
+.section {
+    padding: 2rem;
 }
 
 .container {
     max-width: 960px;
     margin: 0 auto;
-    padding: 20px;
-}
-
-/* Header Styles */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-}
-
-header h1 {
-    margin: 0;
-}
-
-/* Navigation Styles */
-nav {
-    margin-top: 20px;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 10px;
-}
-
-nav ul li a {
-    color: #333;
-    text-decoration: none;
-    padding: 5px;
-}
-
-nav ul li a:hover {
-    background-color: #333;
-    color: #fff;
-    border-radius: 5px;
-}
-
-/* Main Content Styles */
-.main-content {
-    margin-top: 20px;
 }
 
 .post {
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 
 .post h2 {
-    margin-top: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
 }
 
-.post p {
-    line-height: 1.5;
+.post .post-author {
+    font-size: 1rem;
+    color: #888;
 }
 
-/* Sidebar Styles */
-.sidebar {
-    float: right;
-    width: 30%;
-    margin-left: 20px;
+.post .post-content {
+    margin-top: 1rem;
+    line-height: 1.6;
 }
 
-.sidebar h3 {
-    margin-top: 0;
+.title.is-4 {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-.sidebar ul {
+.comments {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #20883a;
+}
+
+.comment-list {
     list-style-type: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
-.sidebar ul li {
-    margin-bottom: 10px;
+.comment {
+    margin-bottom: 1.5rem;
 }
 
-.sidebar ul li a {
-    color: #333;
-    text-decoration: none;
+.comment-content {
+    margin-bottom: 0.5rem;
 }
 
-.sidebar ul li a:hover {
-    color: #666;
+.comment-author {
+    font-size: 0.9rem;
+    color: #888;
 }
 
-/* Footer Styles */
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
+.footer {
+    background-color: #f5f5f5;
+    padding: 1.5rem 0;
     text-align: center;
 }
 
-footer p {
+.footer p {
     margin: 0;
+    font-size: 0.9rem;
+}
+
+.social-icons {
+    margin-top:
+        1rem;
+}
+
+.social-icon {
+    display: inline-block;
+    margin-right: 1rem;
+    color:
+        #888;
+    font-size: 1.5rem;
 }

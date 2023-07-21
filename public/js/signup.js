@@ -8,7 +8,7 @@ async function signupFormHandler(event) {
 
 
   if (username && email && password) {
-    const response = await fetch("/api/users/create", {
+    const response = await fetch("/api/user", {
       method: "POST",
       body: JSON.stringify({
         username,
@@ -31,5 +31,5 @@ async function signupFormHandler(event) {
 }
 
 document
-  .querySelector("signup-form")
+  .querySelector(".signup-form")
   .addEventListener("submit", signupFormHandler);
