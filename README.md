@@ -58,4 +58,4 @@ Questions or feedbacks are always welcome and appreciated.💬
 
 ## GitHub Deployment Link:
 
-[![Github-link](./assets/icon_images//image-2.png)](https://mackarimi.github.io/)
+[![Github-link](./assets/icon_images/image-2.png)](https://mackarimi.github.io/)
