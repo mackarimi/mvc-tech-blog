@@ -54,7 +54,7 @@ Questions or feedbacks are always welcome and appreciated.💬
 
 ## GitHub 💻
 
-[![Github](./assets/icon_images/image-1.)](https://github.com/mackarimi/)
+[![Github](./assets/icon_images/image-1.png)](https://github.com/mackarimi/)
 
 ## GitHub Deployment Link:
 
