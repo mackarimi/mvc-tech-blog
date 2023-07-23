@@ -1,82 +1,90 @@
-<h1>main</h1>
+<!DOCTYPE html>
 <html lang="en">
-
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Wat'cha Blogging</title>
-    <!-- Add your CSS and JavaScript links here -->
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-  </head>
-
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wat'cha Blogging</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+</head>
+<body>
+  <div class="wrapper">
     <header>
-      <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-menu">
-          <div class="navbar-start">
-            <h1 class="navbar-item title is-4"></h1>
-          </div>
+      <div class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">
+            Wat'cha Blogging
+          </a>
+          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-end">
-            <ul class="navbar-start">
-              <li class="navbar-item"><a href="/" class="navbar-link"><span
-                    class="icon-text"
-                  ><span class="icon"><i class="fas fa-home"></i></span><span
-                    >Home</span></span></a></li>
-            </ul>
+            <a class="navbar-item" href="/">Home</a>
+            <a class="navbar-item" href="/dashboard">Dashboard</a>
             {{#if loggedIn}}
-              <ul class="navbar-start">
-                <li class="navbar-item"><a
-                    href="/dashboard"
-                    class="navbar-link"
-                  >Dashboard</a></li>
-                <li class="navbar-item"><a
-                    href="/logout"
-                    class="navbar-link"
-                  >Logout</a></li>
-              </ul>
+              <a class="navbar-item" id="logout" href="/">Logout</a>
             {{else}}
-              <ul class="navbar-start">
-                <li class="navbar-item"><a
-                    href="/login"
-                    class="navbar-link"
-                  ><span class="icon-text"><span class="icon"><i
-                          class="fas fa-sign-in-alt"
-                        ></i></span><span>Login</span></span></a></li>
-                <li class="navbar-item"><a
-                    href="/signup"
-                    class="navbar-link"
-                  ><span class="icon-text"><span class="icon"><i
-                          class="fas fa-user-plus"
-                        ></i></span><span>Sign Up</span></span></a></li>
-              </ul>
+              <a class="navbar-item" href="/login">Login</a>
             {{/if}}
           </div>
         </div>
-      </nav>
+      </div>
     </header>
-
     <main>
-      {{{body}}}
+      {{{ body }}}
     </main>
-
     <footer class="footer">
       <div class="content has-text-centered">
-        <p>&copy; {{year}} Wat'cha Blogging. All rights reserved.</p>
+        <p>Stay up to date with the latest tech news and trends.</p>
+        <div class="social-icons">
+          <a href="#" class="social-icon">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
       </div>
     </footer>
+  </div>
+  {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+  {{/if}}
 
-  </body>
-
+  <script>
+    // JavaScript to handle the functioning navbar burger
+    document.addEventListener('DOMContentLoaded', () => {
+      // Get all "navbar-burger" elements
+      const navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+      
+      // Check if there are any navbar burgers
+      if (navbarBurgers.length > 0) {
+        
+        // Add a click event on each of them
+        navbarBurgers.forEach((el) => {
+          el.addEventListener('click', () => {
+            
+            // Get the target from the "data-target" attribute
+            const target = el.dataset.target;
+            const targetElement = document.getElementById(target);
+            
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            el.classList.toggle('is-active');
+            targetElement.classList.toggle('is-active');
+          });
+        });
+      }
+    });
+  </script>
+</body>
 </html>

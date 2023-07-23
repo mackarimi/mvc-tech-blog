@@ -1,68 +1,24 @@
-<h1>single-post</h1>
+{{> post-info post}}
 
-<html lang="en">
-
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{title}}</title>
-    <!-- Add your CSS and JavaScript links here -->
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-  </head>
-
-  <body>
-    <section class="section">
-      <div class="container">
-        <div class="post">
-          <h2>{{title}}</h2>
-          <p class="post-author">Posted by
-            {{User.username}}
-            on
-            {{created_at}}</p>
-          <div class="post-content">
-            {{{post_content}}}
-          </div>
-        </div>
-
-        <h2 class="title is-6">Comments</h2>
-
-        <div class="comments">
-          <ul class="comment-list">
-            {{#each comments}}
-              <li class="comment">
-                <div class="comment-content">{{this.content}}</div>
-                <div class="comment-author">Posted by
-                  {{this.author}}
-                  on
-                  {{this.created_at}}</div>
-              </li>
-            {{/each}}
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Add your JavaScript code here -->
-
-
-  </body>
-  <footer class="footer">
-    <div class="container">
-
-      <div class="social-icons">
-        <a href="#" class="social-icon">Facebook</a>
-        <a href="#" class="social-icon">Twitter</a>
-        <a href="#" class="social-icon">Instagram</a>
-      </div>
+{{#if loggedIn}}
+<form class="comment-form">
+  <div class="field">
+    <label class="label" for="comment-body">Add Comment</label>
+    <div class="control">
+      <textarea name="comment-body" class="textarea"></textarea>
     </div>
-  </footer>
+  </div>
 
-</html>
+  <div class="field">
+    <div class="control">
+      <button type="submit" class="button is-primary">Add Comment</button>
+    </div>
+  </div>
+</form>
+{{/if}}
+
+{{> comments post.comments}}
+
+{{#if loggedIn}}
+<script src="/js/comment.js"></script>
+{{/if}}

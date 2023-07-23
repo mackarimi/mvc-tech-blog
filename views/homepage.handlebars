@@ -1,39 +1,7 @@
-{{! Use Bulma CSS classes for styling }}
-{{! Header }}
-{{header}}
-
-{{! Navigation }}
-{{navigation}}
-
-<section class="section">
-  <div class="container ">
-    <div class="box">
-      <h2 class="title has-text-left">Tech Blog</h2>
-    </div>
-
-    <h1>Homepage</h1>
-    {{#if posts.length}}
-      <div class="columns is-multiline is-flex-direction-column">
-        {{#each posts}}
-          <div class="column is-4">
-            <div class="box post">
-              <h3 class="title is-4 has-background-primary has-text-white"><a
-                  href="/post/{{id}}"
-                  class="has-text-white"
-                >{{title}}</a></h3>
-              <p class="has-text-grey">Posted by
-                {{user}}
-                on
-                {{formatDate created_at}}</p>
-            </div>
-          </div>
-        {{/each}}
-      </div>
-    {{else}}
-      <p>No posts found.</p>
-    {{/if}}
-  </div>
-</section>
-
-{{! Footer }}
-{{footer}}
+<ol class="post-list">
+  {{#each posts as |post|}}
+  <li>
+    {{> post-info post}}
+  </li>
+  {{/each}}
+</ol>
