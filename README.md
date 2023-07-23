@@ -50,12 +50,12 @@ Please let me know how I can improve this project. Issues and pull requests are 
 
 Questions or feedbacks are always welcome and appreciated.💬
 
-[![Email](./Assets/icon_images/image.png)](mailto:karimiabdolkarim0@gmail.com)
+[![Email](./assets/icon_images/image.png)](mailto:karimiabdolkarim0@gmail.com)
 
 ## GitHub 💻
 
-[![Github](./Assets/icon_images/image-1.png)](https://github.com/mackarimi/)
+[![Github](./assets/icon_images/image-1.)](https://github.com/mackarimi/)
 
 ## GitHub Deployment Link:
 
-[![Github-link](./Assets/icon_images//image-2.png)](https://mackarimi.github.io/)
+[![Github-link](./assets/icon_images//image-2.png)](https://mackarimi.github.io/)
