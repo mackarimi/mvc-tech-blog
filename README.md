@@ -13,9 +13,9 @@ This is a CMS-style blog site that allows you to publish articles, blog posts, a
 💠[Contribution](#contribution)
 💠[Questions](#questions)
 💠[GitHub](#github)
-💠[GitHub-link](#Github-link)
+💠[Heroku](#heroku)
 
-## Installation
+## Installation:
 
 Instructions to get the application running locally:
 
@@ -25,9 +25,9 @@ Instructions to get the application running locally:
 4. Open the integrated terminal from the VSCode: `ctrl+~`
 5. Start the application with `npm start`
 
-## Usage
+## Usage:
 
-## Screenshots
+## Screenshots:
 
 ![Screenshot](./assets/icon_images/signup.jpg)
 ![Screenshot](./assets/icon_images/dash.jpg)
@@ -36,24 +36,24 @@ Instructions to get the application running locally:
 ![Screenshot](./assets/icon_images/addnew.jpg)
 ![Screenshot](./assets/icon_images/post.jpg)
 
-## License
+## License:
 
 This project is licensed under the None license.
 
-## Contribution
+## Contribution:
 
 Please let me know how I can improve this project. Issues and pull requests are always welcome.
 
-## Questions
+## Questions:
 
 Questions or feedbacks are always welcome and appreciated.💬
 
 [![Email](./assets/icon_images/image.png)](mailto:karimiabdolkarim0@gmail.com)
 
-## GitHub 💻
+## GitHub:
 
 [![Github](./assets/icon_images/image-1.png)](https://github.com/mackarimi/)
 
-## GitHub Deployment Link:
+## Heroku:
 
-[![Github-link](./assets/icon_images/image-2.png)](https://mackarimi.github.io/)
+[![Heroku](./assets/icon_images/heroku-50.png)](https://mvc-tech-b-f33d193efe6a.herokuapp.com/)
