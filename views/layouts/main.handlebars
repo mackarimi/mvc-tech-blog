@@ -1,90 +1,39 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wat'cha Blogging</title>
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
-</head>
-<body>
-  <div class="wrapper">
-    <header>
-      <div class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="/">
-            Wat'cha Blogging
-          </a>
-          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-end">
-            <a class="navbar-item" href="/">Home</a>
-            <a class="navbar-item" href="/dashboard">Dashboard</a>
-            {{#if loggedIn}}
-              <a class="navbar-item" id="logout" href="/">Logout</a>
-            {{else}}
-              <a class="navbar-item" href="/login">Login</a>
-            {{/if}}
-          </div>
-        </div>
-      </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wat'cha Blogging</title>
+    <link rel="stylesheet" href="/css/style.css" />
+
+  </head>
+
+  <body class="flex-column min-100-vh">
+    <header class="mvc">
+      <h1 class="app-title"><a href="/dashboard">Wat'cha Blogging</a></h1>
     </header>
-    <main>
-      {{{ body }}}
+
+    <nav class="navbar">
+      <ul class="flex-row">
+        <li class="li-inline nav-item"><a href="/">Home</a></li>
+        <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
+        {{#if logged_in}}
+          <li class="li-inline nav-item"><a href="#" id="logout-link">Log out</a></li>
+        {{else}}
+          <li class="li-inline nav-item"><a href="/login">Log in</a></li>
+        {{/if}}
+      </ul>
+    </nav>
+
+    <main class="col-auto">
+      {{{body}}}
     </main>
+
+    <!-- Footer -->
     <footer class="footer">
       <div class="content has-text-centered">
         <p>Stay up to date with the latest tech news and trends.</p>
-        <div class="social-icons">
-          <a href="#" class="social-icon">
-            <i class="fab fa-facebook"></i>
-          </a>
-          <a href="#" class="social-icon">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="#" class="social-icon">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="#" class="social-icon">
-            <i class="fab fa-linkedin"></i>
-          </a>
-        </div>
       </div>
     </footer>
-  </div>
-  {{#if loggedIn}}
-    <script src="/js/logout.js"></script>
-  {{/if}}
-
-  <script>
-    // JavaScript to handle the functioning navbar burger
-    document.addEventListener('DOMContentLoaded', () => {
-      // Get all "navbar-burger" elements
-      const navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-      
-      // Check if there are any navbar burgers
-      if (navbarBurgers.length > 0) {
-        
-        // Add a click event on each of them
-        navbarBurgers.forEach((el) => {
-          el.addEventListener('click', () => {
-            
-            // Get the target from the "data-target" attribute
-            const target = el.dataset.target;
-            const targetElement = document.getElementById(target);
-            
-            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-            el.classList.toggle('is-active');
-            targetElement.classList.toggle('is-active');
-          });
-        });
-      }
-    });
-  </script>
-</body>
+  </body>
 </html>

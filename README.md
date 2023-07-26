@@ -31,8 +31,7 @@ Instructions to get the application running locally:
 
 ## Screenshots
 
-View demo video here:
-https://www.loom.com/
+![Screenshot](./assets/images/screenshot.png)
 
 ## License
 

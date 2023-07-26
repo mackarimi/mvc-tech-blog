@@ -11,13 +11,13 @@ const commentData = [
     post_id: 2,
     comment_text: "This is a comment on the second post.",
   },
-  // Add more comment data as needed
   {
     user_id: 3,
     post_id: 3,
     comment_text: "This is a comment on the third post.",
   },
 ];
+
 
 const seedComments = () => Comment.bulkCreate(commentData);
 

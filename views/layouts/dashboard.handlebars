@@ -1,42 +1,31 @@
-<h1>Dashboard</h1>
-{{! Header }}
-{{header}}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Your Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
 
-{{! Navigation }}
-{{navigation}}
+  <body class="flex-column min-100-vh">
+     <header class="mvc">
+      <h1 class="app-title"><a href="/dashboard">User Dash</a></h1>
+    </header>
 
-<div class="section">
-  <div class="container">
-    <h2 class="title">Welcome to Your Dashboard</h2>
+    <nav class="navbar">
+      <ul class="flex-row">
+        <li class="li-inline nav-item"><a href="/">Home</a></li>
+        <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
+        <li class="li-inline nav-item"><a href="#" id="logout-link">Log Out</a></li>
+        <li class="li-inline nav-item"><a href="/dashboard/new">New Post</a></li>
+      </ul>
+    </nav>
+   
+    <main class="col-auto">
 
-    <a href="dashboard/create" class="button is-primary">Add New Post</a>
+      {{{body}}}
+  
+    </main>
 
-    {{#if posts}}
-      {{#each posts}}
-        <div class="box post">
-          <div class="content">
-            <h3 class="title is-4"><a href="/post/{{id}}">{{title}}</a></h3>
-            <p class="subtitle is-6">Created on {{created_at}}</p>
-            <div class="buttons">
-              <a href="{{id}}" class="button is-link">Edit</a>
-              <a href="{{id}}" class="button is-danger">Delete</a>
-            </div>
-          </div>
-        </div>
-      {{/each}}
-    {{else}}
-      <p>No posts found.</p>
-    {{/if}}
-
-    <div class="social-icons">
-      <a href="https://github.com" target="_blank"><i
-          class="fab fa-github"
-        ></i></a>
-      <a href="https://twitter.com" target="_blank"><i
-          class="fab fa-twitter"
-        ></i></a>
-    </div>
-  </div>
-</div>
-{{! Footer }}
-{{footer}}
+  </body>
+  <script src="/js/logout.js"></script>
+</html>

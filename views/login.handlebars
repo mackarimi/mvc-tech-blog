@@ -1,113 +1,18 @@
-<h1></h1>
-<section class="section">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-one-third">
-        <div class="box">
-          <h2 class="title has-text-centered">Login</h2>
-          <div class="login-form">
-            <div class="field">
-              <label class="label" for="username">Username</label>
-              <div class="control">
-                <input
-                  class="input"
-                  type="text"
-                  name="username"
-                  id="username"
-                  placeholder="Enter your username"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="field">
-              <label class="label" for="password">Password</label>
-              <div class="control">
-                <input
-                  class="input"
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="Enter your password"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="field">
-              <label class="checkbox">
-                <input type="checkbox" />
-                Remember me
-              </label>
-            </div>
-
-            <div class="field">
-              <div class="control has-text-centered">
-                <button
-                  class="button is-primary"
-                  id="loginBtn"
-                  type="submit"
-                >Login</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="card">
+  <div class="card-header">
+    <h2>Log in</h2>
   </div>
-</section>
-
-<h1></h1>
-<section class="section">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-one-third">
-        <div class="box">
-          <h2 class="title has-text-centered">Sign Up</h2>
-          <form class="signup-form">
-            <div class="field">
-              <label class="label" for="username-signup">Username</label>
-              <div class="control">
-                <input
-                  class="input"
-                  type="text"
-                  id="username-signup"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="field">
-              <label class="label" for="email-signup">Email</label>
-              <div class="control">
-                <input class="input" type="email" id="email-signup" required />
-              </div>
-            </div>
-
-            <div class="field">
-              <label class="label" for="password-signup">Password</label>
-              <div class="control">
-                <input
-                  class="input"
-                  type="password"
-                  id="password-signup"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="field">
-              <div class="control has-text-centered">
-                <button class="button is-primary" type="submit">Sign Up</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
+  <form id="login-form" class="card-body">
+    <div>
+      <label for="username-input-login">Username</label>
+      <input type="text" id="username-input-login" />
     </div>
-  </div>
-</section>
-
-<!-- Place your JavaScript scripts at the end of the file -->
+    <div>
+      <label for="password-input-login" class="form-label">Password</label>
+      <input type="password" id="password-input-login"/>
+    </div>
+     <button type="submit" id="login-btn" class="btn">Log in</button>
+    <a type="button" href="/signup">New Account Sign Up</a>
+  </form>
+</div>
 <script src="/js/login.js"></script>
-<script src="/js/signup.js"></script>

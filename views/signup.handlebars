@@ -1,41 +1,23 @@
-<h1>Signup</h1>
-<section class="section">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-one-third">
-        <div class="box">
-          <h2 class="title has-text-centered">Sign Up</h2>
-          <form class="signup-form">
-            <div class="field">
-              <label class="label" for="username-signup">Username</label>
-              <div class="control">
-                <input class="input" type="text" id="username-signup" required />
-              </div>
-            </div>
-
-            <div class="field">
-              <label class="label" for="email-signup">Email</label>
-              <div class="control">
-                <input class="input" type="email" id="email-signup" required />
-              </div>
-            </div>
-
-            <div class="field">
-              <label class="label" for="password-signup">Password</label>
-              <div class="control">
-                <input class="input" type="password" id="password-signup" required />
-              </div>
-            </div>
-
-            <div class="field">
-              <div class="control has-text-centered">
-                <button class="button is-primary" type="submit">Sign Up</button>
-              </div>
-            </div>
-          </form>
+<div class="card">
+  <div class="card-header">
+    <h2>Sign Up</h2>
+  </div>
+  <div id="signup" role="tabpanel">
+    <form id="signup-form" class="card-body">
+      <div>
+        <label for="username-input-signup">Username</label>
+        <input type="text" id="username-input-signup" />
+      </div>
+      <div>
+        <label for="password-input-signup">Password</label>
+        <div class="password-input-wrapper">
+          <input type="password" id="password-input-signup" />
+          <button type="button" id="toggle-password-btn">Show Password</button>
         </div>
       </div>
-    </div>
-    <script src="/js/signup.js"></script>
+      <button type="submit" id="signup-btn" class="btn">Sign Up</button>
+      <a href="/login">Existing User Login</a>
+    </form>
   </div>
-</section>
+</div>
+<script src="/js/signup.js"></script>

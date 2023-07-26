@@ -1,30 +1,40 @@
-async function commentFormHandler(event) {
+// event listener for comment posting
+const commentFormHandler = async function (event) {
   event.preventDefault();
+  const post_id = document.querySelector('input[name="post-id"]').value;
+  const comment_text = document.querySelector(
+    'input[name="comment-body"]'
+  ).value;
 
-  const comment_text = document.querySelector('textarea[name="comment-body"]').value.trim();
-
-  const post_id = window.location.toString().split('/')[
-    window.location.toString().split('/').length - 1
-  ];
+  console.log(post_id)
+  console.log(comment_text)
 
   if (comment_text) {
-    const response = await fetch('/api/comments', {
-      method: 'POST',
+    await fetch("/api/comments", {
+      method: "POST",
       body: JSON.stringify({
         post_id,
-        comment_text
+        comment_text,
       }),
       headers: {
-        'Content-Type': 'application/json'
-      }
+        "Content-Type": "application/json",
+      },
     });
-
-    if (response.ok) {
-      document.location.reload();
-    } else {
-      alert(response.statusText);
-    }
+    document.location.reload();
   }
-}
+};
 
-document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
+
+// event listner for delete posting
+const deleteClickHandler = async () => {
+  const post_id = document.querySelector('input[name="post-id"]').value;
+  await fetch(`/api/comment`, {
+    method: "DELETE",
+  });
+  document.location.reload();
+};
+
+
+document
+  .querySelector("#new-comment-form")
+  .addEventListener("submit", commentFormHandler);

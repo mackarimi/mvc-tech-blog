@@ -1,35 +1,27 @@
-// create signup.handlebars
-async function signupFormHandler(event) {
+// function for signup
+const signupHandler = async function (event) {
   event.preventDefault();
-
-  const username = document.querySelector("#username-signup").value.trim();
-  const email = document.querySelector("#email-signup").value.trim();
-  const password = document.querySelector("#password-signup").value.trim();
-
-
-  if (username && email && password) {
-    const response = await fetch("/api/user", {
+  const usernameEl = document.querySelector("#username-input-signup");
+  const passwordEl = document.querySelector("#password-input-signup");
+  if (usernameEl && passwordEl) {
+    const response = await fetch("/api/users/", {
       method: "POST",
       body: JSON.stringify({
-        username,
-        email,
-        password,
+        username: usernameEl.value,
+        password: passwordEl.value,
       }),
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
     });
-
-    // check the response status
     if (response.ok) {
-      console.log("success");
       document.location.replace("/dashboard");
     } else {
-      alert(response.statusText);
+      console.log(response)
+      alert("Invalid. Failed Attempt");
     }
   }
-}
+};
+
 
 document
-  .querySelector(".signup-form")
-  .addEventListener("submit", signupFormHandler);
+  .querySelector("#signup-form")
+  .addEventListener("submit", signupHandler);

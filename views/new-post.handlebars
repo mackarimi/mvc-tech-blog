@@ -1,24 +1,14 @@
-<section>
-  <h2 class="title">Create New Post</h2>
-  <form class="new-post-form">
-    <div class="field">
-      <label class="label" for="post-title">Title</label>
-      <div class="control">
-        <input type="text" id="post-title" name="post-title" class="input" />
-      </div>
-    </div>
-    <div class="field">
-      <label class="label" for="post-text">Post</label>
-      <div class="control">
-        <textarea id="post-text" name="post-text" class="textarea"></textarea>
-      </div>
-    </div>
-    <div class="field">
-      <div class="control">
-        <button type="submit" class="button is-primary">Create</button>
-      </div>
-    </div>
+<div class="post card">
+  <div class="card-header">
+    <h2>Create a New Post</h2>
+  </div>
+  <form id="new-post-form" class="card-body">
+    <label class="form-label" for="post-title">Post Title</label>
+    <input type="text" name="post-title" class="form-input"/>
+    <label class="form-label" for="post-body">Post Content</label>
+    <input type="text" name="post-body" class="form-input"/>
+    <br>
+    <button type="submit" class="btn">Create a Post</button>
   </form>
-</section>
-
-<script src="/js/add-post.js"></script>
+</div>
+<script src="/js/new-post.js"></script>
