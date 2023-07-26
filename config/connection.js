@@ -1,17 +1,32 @@
-const Sequelize = require('sequelize');
+const Sequelize = require("sequelize");
+require("dotenv").config();
 
-// Use process.env.JAWSDB_URL to connect to the database on Heroku
-const sequelize = new Sequelize(process.env.JAWSDB_URL, {
-  dialect: 'mysql',
-  // Other options if needed
-});
+let sequelize;
 
-// Test the database connection
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('Connection to the database has been established successfully.');
-  })
-  .catch((err) => {
-    console.error('Unable to connect to the database:', err);
+if (process.env.JAWSDB_URL) {
+  // Use JAWSDB_URL for database connection if available (on Heroku)
+  sequelize = new Sequelize(process.env.JAWSDB_URL);
+} else {
+  // Use local database configuration for development
+  sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PW, {
+    host: process.env.DB_HOST || "localhost",
+    port: process.env.DB_PORT || 3306,
+    dialect: "mysql",
+    dialectOptions: {
+      decimalNumbers: true,
+    },
   });
+}
+
+async function connect() {
+  try {
+    await sequelize.authenticate();
+    console.log("Connection has been made.");
+  } catch (error) {
+    console.error("Unable to establish a connection to the database:", error);
+  }
+}
+
+connect();
+
+module.exports = sequelize;

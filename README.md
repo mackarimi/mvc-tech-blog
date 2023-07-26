@@ -11,8 +11,6 @@ This is a CMS-style blog site that allows you to publish articles, blog posts, a
 💠[Screenshots](#screenshots)
 💠[License](#license)
 💠[Contribution](#contribution)
-💠[Test](#test)
-💠[Credits](#credits)
 💠[Questions](#questions)
 💠[GitHub](#github)
 💠[GitHub-link](#Github-link)
@@ -31,7 +29,12 @@ Instructions to get the application running locally:
 
 ## Screenshots
 
-![Screenshot](./assets/images/screenshot.png)
+![Screenshot](./assets/icon_images/signup.jpg)
+![Screenshot](./assets/icon_images/dash.jpg)
+![Screenshot](./assets/icon_images/home.jpg)
+![Screenshot](./assets/icon_images/add.jpg)
+![Screenshot](./assets/icon_images/addnew.jpg)
+![Screenshot](./assets/icon_images/post.jpg)
 
 ## License
 
@@ -40,10 +43,6 @@ This project is licensed under the None license.
 ## Contribution
 
 Please let me know how I can improve this project. Issues and pull requests are always welcome.
-
-## Test
-
-## Credits
 
 ## Questions
 
