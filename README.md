@@ -14,6 +14,8 @@ This is a CMS-style blog site that allows you to publish articles, blog posts, a
 💠[Questions](#questions)
 💠[GitHub](#github)
 💠[Heroku](#heroku)
+💠[Github Repo](#github-repo)
+
 
 ## Installation:
 
@@ -57,3 +59,7 @@ Questions or feedbacks are always welcome and appreciated.💬
 ## Heroku:
 
 [![Heroku](./assets/icon_images/heroku-50.png)](https://mvc-tech-b-f33d193efe6a.herokuapp.com/)
+
+## Github Repo:
+
+[![Repo](./assets/icon_images/image-2.png)](https://github.com/mackarimi/mvc-tech-blog)
